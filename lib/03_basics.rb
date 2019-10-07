@@ -16,22 +16,31 @@ end
 
 def reverse_upcase_noLTA(string)
 
-	string.reverse!
-	string.upcase
-	string.gsub("L", "")
-	string.gsub("T", "")
-	string.gsub("A", "")
+	string = string.reverse
+	string = string.upcase
+	string.delete! '(LTA)'
 	return string
 
 end
 
-def array_42
+def array_42(number)
+
+	if number.include? 42
+        return true
+    else
+        return false
+    end
 
 end
 
-def magic_array
-
+def magic_array(x)
+    puts x.flatten.sort.collect { |n| n * 2 }.reject! {|x| x % 3 == 0}.uniq
 end
+
+
+
+
+
 
 
 
